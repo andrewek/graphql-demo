@@ -1,24 +1,35 @@
-# README
+# Artist GraphQL DB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup Instructions
 
-Things you may want to cover:
+1. Clone the repo
+2. `bundle install` (you may need to install bundler)
+3. `rails db:setup` (you may need to install postgres)
 
-* Ruby version
+To open up the rails console: `rails c`
 
-* System dependencies
+To run the server: `rails s` (then `http://localhost:3000/`)
 
-* Configuration
+Most stuff lives in `app/`
 
-* Database creation
+Get to Graphiql through `http://localhost:3000/graphiql`
 
-* Database initialization
+Grab one artist
 
-* How to run the test suite
+```
+query {artist(id:7) {name id}}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Grab all artists
 
-* Deployment instructions
+```
+query {artists {name id}}
+```
 
-* ...
+Insert an artist
+
+```
+mutation {createArtist(input: {params: {name: "Kodo"}}){
+	artist {name id}
+}}
+```
