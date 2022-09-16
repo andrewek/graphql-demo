@@ -41,3 +41,11 @@ mutation {updateArtist(input: {id: 1, params: {name: "Taylor Swift"}}){
 	artist {name id}
 }}
 ```
+
+Delete an artist
+
+```
+mutation {destroyArtist(input: {id: 3}) {
+  message
+}}
+```
