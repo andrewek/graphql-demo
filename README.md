@@ -33,3 +33,11 @@ mutation {createArtist(input: {params: {name: "Kodo"}}){
 	artist {name id}
 }}
 ```
+
+Update an artist:
+
+```
+mutation {updateArtist(input: {id: 1, params: {name: "Taylor Swift"}}){
+	artist {name id}
+}}
+```
